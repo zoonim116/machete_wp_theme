@@ -1,0 +1,134 @@
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 992px) {
+    .photos .col-sm-6 {
+        margin-bottom: 25px;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    header nav ul:before, header nav ul:after {
+        display: none;
+    }
+
+    #mainslider .slide {
+        min-height: 600px;
+    }
+
+    #mainslider .content {
+        left: 45%;
+        top: 55%;
+        min-height: 600px;
+    }
+
+    #mainslider .city {
+        font-size: 60px;
+        line-height: 60px;
+
+    }
+
+    #mainslider .date {
+        font-size: 33px;
+        line-height: 33px;
+    }
+
+    #mainslider .mdwn {
+        bottom: 20px;
+    }
+
+    #mainslider .owl-dots {
+        bottom: 100px;
+    }
+
+    #mainmenu {
+        margin-top: 15px;
+        position: relative;
+        min-height: 30px;
+    }
+
+    #mainmenu .menu-wrapper{
+        height: 100%;
+        position: fixed;
+        z-index: 1040;
+        overflow-x: hidden;
+        top: 0;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        padding-top: 45px;
+        padding-bottom: 15px;
+        background-color: rgba(0,0,0, 0.8);
+        width: 275px;
+        left: -275px;
+    }
+
+    #mainmenu .icon-block.block-open + .menu-wrapper {
+        left: 0;
+    }
+
+    #mainmenu .menu-wrapper > ul {
+        display: block;
+    }
+
+    #mainmenu ul li {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #mainmenu .icon-block {
+        display: block;
+        width: 65px;
+        position: absolute;
+        left: 50%;
+        margin-left: -31px;
+        top: 0;
+
+    }
+
+    .photos .col-xs-12 {
+        margin-bottom: 25px;
+    }
+    .stick-item .date,
+    .stick-item .image {
+        margin-bottom: 25px;
+    }
+
+    footer .logo {
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #mainslider .content {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+    header .top-links {
+        margin-top: 0;
+    }
+
+    .news .col-xs-6 {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+
+}
