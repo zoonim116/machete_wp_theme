@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 	$('#mainslider .owl-carousel').owlCarousel({
         items: 1,
         nav: false,

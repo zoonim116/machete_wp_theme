@@ -28,3 +28,21 @@ msgstr ""
 
 msgid "Использование  информации"
 msgstr ""
+
+msgid "Новости"
+msgstr ""
+
+msgid "Новость"
+msgstr ""
+
+msgid "Добавить новость"
+msgstr ""
+
+msgid "Меню"
+msgstr ""
+
+msgid "HAVAKUK"
+msgstr ""
+
+msgid "New"
+msgstr ""

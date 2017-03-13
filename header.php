@@ -17,7 +17,18 @@
 
     <!--[if IE]>
     <![endif]-->
-
+    <?php if (is_admin_bar_showing()) { ?> 
+    	<style type="text/css">
+    		header.main-header {
+    			margin-top: 32px;
+    		}
+    		@media only screen and (max-width: 768px) {
+    			#mainmenu .menu-wrapper {
+    				margin-top: 32px;
+    			}
+    		}
+    	</style>
+    <?php } ?>
     <?php wp_head(); ?>
 </head>
 
@@ -25,7 +36,7 @@
 		<div class="container">
 			<div class="row top-links">
 				<div class="col-xs-3 col-sm-2 col-md-6  hidden-xs">
-					<a href="#">HAVAKUK <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+					<a href="#"> <?php echo __('HAVAKUK', 'machete'); ?> <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="col-xs-9 col-sm-10 col-md-6  hidden-xs">
 					<ul class="soc">
@@ -59,7 +70,7 @@
 		</div>
 		<nav id="mainmenu">
             <div class="icon-block">
-                <span>Меню</span>
+                <span><?php echo __('Меню', 'machete'); ?></span>
                 <i class="fa fa-bars" aria-hidden="true"></i>
 
             </div>

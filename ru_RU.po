@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Machete\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-06 10:11+0000\n"
-"PO-Revision-Date: 2017-03-06 10:12+0000\n"
+"POT-Creation-Date: 2017-03-13 09:31+0000\n"
+"PO-Revision-Date: 2017-03-13 09:31+0000\n"
 "Last-Translator: admin <admin@machete.loc>\n"
 "Language-Team: Russian\n"
 "Language: ru-RU\n"
@@ -22,11 +22,26 @@ msgstr ""
 msgid "Maxim Nepomniashiy"
 msgstr ""
 
+msgid "Меню"
+msgstr "Меню"
+
+msgid "HAVAKUK"
+msgstr "HAVAKUK"
+
+#. Name of the theme
+msgid "Machete"
+msgstr "Мачете"
+
 msgid "Использование  информации"
 msgstr ""
 "Использование любой информации предоставленной на данном сайте без "
 "согласования с ТОВ “НАЗВАНИЕ” запрещено.\n"
 
-#. Name of the theme
-msgid "Machete"
-msgstr "Мачете"
+msgid "Новости"
+msgstr "Новости"
+
+msgid "Новость"
+msgstr "Новость"
+
+msgid "Добавить новость"
+msgstr "Добавить новость"
