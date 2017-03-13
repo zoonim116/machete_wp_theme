@@ -33,7 +33,7 @@
 				<div class="image">
 					<?php the_post_thumbnail(array(318, 226), array('class' => 'img-responsive')); ?>
 					<span class="date">
-						<span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php the_date(); ?> </span>
+						<span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo get_the_date(); ?> </span>
 					</span>
 				</div>
 				<div class="caption">
@@ -44,12 +44,22 @@
 			<?php endwhile;?>
 		</div>
 		<div class="text-center">
-			<?php echo paginate_links( array(
-	'base' => str_replace( 9999, '%#%', esc_url( get_pagenum_link( 9999 ) ) ),
-	'format' => '?paged=%#%',
-	'current' => max( 1, get_query_var('paged') ),
-	'total' => $wp_query->max_num_pages
-)); ?>
+			<?php $pages = paginate_links( array(
+					'base' => str_replace( 9999, '%#%', esc_url( get_pagenum_link( 9999 ) ) ),
+					'format' => '?paged=%#%',
+					'current' => max( 1, get_query_var('paged') ),
+					'total' => $wp_query->max_num_pages,
+					'type'  => 'array',
+				));
+				if( is_array( $pages ) ) {
+			        $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+			        echo '<div class="text-center"><ul class="pagination">';
+			        foreach ( $pages as $page ) {
+			                echo "<li>$page</li>";
+			        }
+			       echo '</ul></div>';
+			        }
+ 			?>
 		</div>
 	</div>
 </div>

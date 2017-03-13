@@ -105,7 +105,7 @@ add_action( 'pre_get_posts', function ( $q ) {
         $offset = $q->query['paged'] ? $q->query['paged'] : 1; 
         // echo $q->query->paged;
         $q->set('offset', $offset);
-        $q->set( 'posts_per_page', 10 );
+        // $q->set( 'posts_per_page', 1 );
     }
 });
 
