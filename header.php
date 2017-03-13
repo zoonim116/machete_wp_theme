@@ -32,7 +32,7 @@
     <?php wp_head(); ?>
 </head>
 
-<header class="main-header">
+<header class="<?php if(is_front_page()) echo "main-header"; ?>">
 		<div class="container">
 			<div class="row top-links">
 				<div class="col-xs-3 col-sm-2 col-md-6  hidden-xs">

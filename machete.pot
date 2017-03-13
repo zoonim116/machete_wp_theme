@@ -46,3 +46,6 @@ msgstr ""
 
 msgid "New"
 msgstr ""
+
+msgid "Нет данных"
+msgstr ""
