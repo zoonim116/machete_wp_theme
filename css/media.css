@@ -7,7 +7,10 @@
         margin-bottom: 25px;
     }
 
-
+    .grid-sizer,
+    .grid-item {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -81,6 +84,10 @@
         margin-right: 0;
     }
 
+    #mainmenu ul li a:hover{
+        color: #a16c10;
+    }
+
     #mainmenu .icon-block {
         display: block;
         width: 65px;
@@ -94,6 +101,15 @@
     .photos .col-xs-12 {
         margin-bottom: 25px;
     }
+
+    .photo-slider .owl-prev {
+        left: 15px;
+    }
+
+    .photo-slider .owl-next {
+        right: 15px;
+    }
+
     .stick-item .date,
     .stick-item .image {
         margin-bottom: 25px;
@@ -112,6 +128,11 @@
         padding-left: 15px;
         padding-right: 15px;
         text-align: center;
+    }
+
+    .grid-sizer,
+    .grid-item {
+        width: 100%;
     }
 }
 

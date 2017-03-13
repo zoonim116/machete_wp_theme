@@ -10,6 +10,7 @@ function wpdocs_theme_name_scripts() {
     wp_enqueue_script( 'commonn', get_template_directory_uri() . '/js/common.js', array(), '1.0.0', true );
 
 
+
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/libs/bootstrap/css/bootstrap.min.css');
     wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/libs/magnific/magnific-popup.css');
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/libs/font-awesome/css/font-awesome.min.css');
@@ -19,6 +20,7 @@ function wpdocs_theme_name_scripts() {
     wp_enqueue_style('mun_font', get_template_directory_uri() . '/css/font.css');
     wp_enqueue_style('mun_style', get_template_directory_uri() . '/css/style.css');
     wp_enqueue_style('mun_media', get_template_directory_uri() . '/css/media.css');
+    wp_enqueue_style('mun_override', get_template_directory_uri() . '/css/override.css');
 
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
@@ -42,6 +44,7 @@ function my_theme_setup(){
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'custom-logo' );
+    add_theme_support( 'html5', array( 'gallery', 'caption' ) );
     // set_post_thumbnail_size( 825, 510, true );
 }
 
@@ -59,9 +62,11 @@ function create_post_type() {
         'add_new_item' => __('Добавить новость', 'machete')
       ),
       'public' => true,
+      'publicly_queryable' => true,
+      'query_var' => true,
       'supports' => array( 'title', 'editor', 'thumbnail'),
       'has_archive' => true,
-      'rewrite' => true
+      'rewrite' => array('slug' => 'news', 'with_front' => true ),
     )
   );
 
@@ -82,4 +87,25 @@ function create_post_type() {
   );
 
 }
+
+
+
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+  $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+  return $html;
+}
+
+
+add_action( 'pre_get_posts', function ( $q ) {
+    if( !is_admin() && $q->is_main_query() && $q->is_post_type_archive( 'news' ) ) {
+        // echo "<pre>";
+        // die(var_dump($q->query['paged']));
+        $offset = $q->query['paged'] ? $q->query['paged'] : 1; 
+        // echo $q->query->paged;
+        $q->set('offset', $offset);
+        $q->set( 'posts_per_page', 10 );
+    }
+});
 

@@ -1,0 +1,27 @@
+#bwg_container1_0 #bwg_container2_0 .bwg_standart_thumb_spun1_0 {
+	background-color: transparent !important;
+	display: inline !important;
+}
+
+#bwg_container1_0 #bwg_container2_0 .bwg_standart_thumb_spun2_0 {
+    height: initial !important;
+    overflow: visible !important;
+    width: initial !important;
+}
+
+#bwg_container1_0 #bwg_container2_0 .bwg_title_spun1_0 {
+	width: inherit !important;
+    margin-top: 18px !important;
+}
+
+#bwg_container1_0 #bwg_container2_0 .bwg_title_spun1_0  span {
+    text-transform: uppercase;
+    font-family: "PFDinCondensedRegular";
+    font-size: 14px;
+    color: #fff;
+    display: inline-block !important;
+}
+
+div[id^="bwg_container"] a {
+	margin-right: 5%;
+}
