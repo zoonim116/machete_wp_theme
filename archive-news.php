@@ -37,7 +37,7 @@
 					</span>
 				</div>
 				<div class="caption">
-                    <div class="title"><a href="#"><?php the_title(); ?></a></div>
+                    <div class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></div>
                     <!-- <div class="type">VIDEO</div> -->
                 </div>
 			</div>
