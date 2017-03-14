@@ -38,6 +38,12 @@ msgstr ""
 msgid "Добавить новость"
 msgstr ""
 
+msgid "Видео"
+msgstr ""
+
+msgid "Добавить видео"
+msgstr ""
+
 msgid "Меню"
 msgstr ""
 

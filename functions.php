@@ -66,6 +66,7 @@ function create_post_type() {
       'query_var' => true,
       'supports' => array( 'title', 'editor', 'thumbnail'),
       'has_archive' => true,
+      'menu_icon' => 'dashicons-lightbulb',
       'rewrite' => array('slug' => 'news', 'with_front' => true ),
     )
   );
@@ -82,7 +83,25 @@ function create_post_type() {
       'public' => true,
       'supports' => array( 'title', 'editor', 'thumbnail'),
       'has_archive' => true,
-      'rewrite' => true
+      'rewrite' => true,
+      'menu_icon' => 'dashicons-images-alt'
+    )
+  );
+
+   // Homepage Slider
+  register_post_type('video',
+    array(
+      'labels' => array(
+        'name' => __('Видео', 'machete'),
+        'singular_name' =>  __('Видео', 'machete'),
+        'add_new' => __('Добавить видео ', 'machete'),
+        'add_new_item' => __('Добавить видео', 'machete')
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail'),
+      'has_archive' => true,
+      'rewrite' => true,
+      'menu_icon' => 'dashicons-format-video'
     )
   );
 
@@ -100,12 +119,21 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
 
 add_action( 'pre_get_posts', function ( $q ) {
     if( !is_admin() && $q->is_main_query() && $q->is_post_type_archive( 'news' ) ) {
-        // echo "<pre>";
-        // die(var_dump($q->query['paged']));
         $offset = $q->query['paged'] ? $q->query['paged'] : 1; 
-        // echo $q->query->paged;
         $q->set('offset', $offset);
-        // $q->set( 'posts_per_page', 1 );
     }
 });
+
+
+// Add action for video thumbnails
+
+function set_video_thumbnail($youtubeID , $thumbnail = ""){
+   if ($thumbnail) {
+       $html = '<img src="'. $thumbnail . '" />';
+   } else {
+      $html = '<img src="https://img.youtube.com/vi/'.$youtubeID.'/0.jpg" width="360" height="226" />';
+   }
+   echo $html;
+}
+add_action('video_thumbnail', 'set_video_thumbnail', 10, 2);
 
