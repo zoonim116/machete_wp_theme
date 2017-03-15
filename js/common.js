@@ -46,4 +46,14 @@ jQuery(document).ready(function($) {
 	  });
 	});
 
+    jQuery('.mdwn a').click(function() {
+      var target = jQuery(this.hash);
+      if (target.length) {
+        jQuery('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    });
+
 });

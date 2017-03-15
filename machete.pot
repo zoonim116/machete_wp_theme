@@ -32,6 +32,9 @@ msgstr ""
 msgid "Новости"
 msgstr ""
 
+msgid "Все новости"
+msgstr ""
+
 msgid "Новость"
 msgstr ""
 
@@ -41,10 +44,28 @@ msgstr ""
 msgid "Видео"
 msgstr ""
 
+msgid "Все видео"
+msgstr ""
+
 msgid "Добавить видео"
 msgstr ""
 
+msgid "Фото"
+msgstr ""
+
+msgid "Все фото"
+msgstr ""
+
+msgid "Добавить фото"
+msgstr ""
+
+msgid "Альбом"
+msgstr ""
+
 msgid "Меню"
+msgstr ""
+
+msgid "Новое"
 msgstr ""
 
 msgid "HAVAKUK"

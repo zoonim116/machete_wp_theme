@@ -29,41 +29,54 @@
         <div class="container">
             <div class="block-title"><?php echo __('New', 'machete'); ?> </div>
             <div class="owl-carousel round-items">
-                <div>
-                    <a href="#" class="play">
-                        <span class="image"><img src="images/new1.jpg" alt=""></span>
-                        <span class="title">Хит группы MACHETE исполненный на виолончелях и скрипке</span>
-                        <span class="type">VIDEO</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <span class="image"><img class="img-circle" src="images/new1.jpg" alt=""></span>
-                        <span class="title">Хит группы MACHETE исполненный на виолончелях и скрипке</span>
-                        <span class="type">VIDEO</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <span class="image"><img class="img-circle" src="images/new1.jpg" alt=""></span>
-                        <span class="title">Хит группы MACHETE исполненный на виолончелях и скрипке</span>
-                        <span class="type">VIDEO</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <span class="image"><img class="img-circle" src="images/new1.jpg" alt=""></span>
-                        <span class="title">Хит группы MACHETE исполненный на виолончелях и скрипке</span>
-                        <span class="type">VIDEO</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <span class="image"><img class="img-circle" src="images/new1.jpg" alt=""></span>
-                        <span class="title">Хит группы MACHETE исполненный на виолончелях и скрипке</span>
-                        <span class="type">VIDEO</span>
-                    </a>
-                </div>
+            <?php 
+            $news = get_posts(array(
+				'numberposts' => 8,
+				'post_type' => 'news',
+				'meta_query' => array(
+					array(
+						'key' => 'go_homepage',
+						'compare' => '==',
+						'value' => '1'
+					))
+			)); 
+            $hightLevelNews = count($news);
+            $exclude = [];
+			?>
+			<?php if($news) { ?>
+				<?php foreach( $news as $n ):
+				$exclude[] = $n->ID;
+				 ?>
+	                <div>
+	                    <a href="<?php echo get_permalink($n->ID); ?>">
+	                        <span class="image"><img class="" src="<?php echo get_the_post_thumbnail_url($n->ID); ?>" alt=""></span>
+	                        <span class="title"><?php echo $n->post_title; ?></span>
+	                        <!-- <span class="type">VIDEO</span> -->
+	                    </a>
+	                </div>
+            	<?php endforeach; ?>
+            <?php } ?>
+            <?php wp_reset_postdata(); ?>
+            <?php $res = 8 -  $hightLevelNews; ?>
+            <?php
+            query_posts(array(
+                'post_type' => 'news',
+                'showposts' => $res,
+                'post__not_in' => $exclude,
+                'order' => 'DESC'
+            ) );
+            global $wp_query;
+           ?>
+            <?php  while (have_posts()) : the_post(); ?>
+    			 <div>
+	                    <a href="<?php echo get_permalink(); ?>">
+	                        <span class="image"><img class="" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt=""></span>
+	                        <span class="title"><?php the_title(); ?></span>
+	                        <!-- <span class="type">VIDEO</span> -->
+	                    </a>
+	                </div>
+    		<?php endwhile;?>
+    	    <?php wp_reset_query(); ?>
             </div>
         </div>
     </div>

@@ -59,6 +59,7 @@ function create_post_type() {
         'name' => __('Новости', 'machete'),
         'singular_name' =>  __('Новость', 'machete'),
         'add_new' => __('Добавить новость', 'machete'),
+        'all_items' => __('Все новости', 'machete'),
         'add_new_item' => __('Добавить новость', 'machete')
       ),
       'public' => true,
@@ -88,12 +89,13 @@ function create_post_type() {
     )
   );
 
-   // Homepage Slider
+   // Video
   register_post_type('video',
     array(
       'labels' => array(
         'name' => __('Видео', 'machete'),
         'singular_name' =>  __('Видео', 'machete'),
+        'all_items' => __('Все видео', 'machete'),
         'add_new' => __('Добавить видео ', 'machete'),
         'add_new_item' => __('Добавить видео', 'machete')
       ),
@@ -102,6 +104,24 @@ function create_post_type() {
       'has_archive' => true,
       'rewrite' => true,
       'menu_icon' => 'dashicons-format-video'
+    )
+  );
+
+     // Photo
+  register_post_type('photo',
+    array(
+      'labels' => array(
+        'name' => __('Фото', 'machete'),
+        'singular_name' =>  __('Фото', 'machete'),
+        'all_items' => __('Все фото', 'machete'),
+        'add_new' => __('Добавить фото ', 'machete'),
+        'add_new_item' => __('Добавить фото', 'machete')
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail'),
+      'has_archive' => true,
+      'rewrite' => true,
+      'menu_icon' => 'dashicons-format-image'
     )
   );
 
@@ -136,4 +156,20 @@ function set_video_thumbnail($youtubeID , $thumbnail = ""){
    echo $html;
 }
 add_action('video_thumbnail', 'set_video_thumbnail', 10, 2);
+
+//Add photo album  taxonomy
+
+add_action( 'init', 'create_layout_tax', 0 );
+
+  function create_layout_tax() {
+    register_taxonomy(
+      'albums',
+      array('photo'),
+      array(
+        'label'             => __( 'Альбом', 'machete' ),
+        'hierarchical'       => true,
+        'query_var'         => true,
+      )
+    );
+}
 
