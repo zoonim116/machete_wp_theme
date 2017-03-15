@@ -108,7 +108,7 @@ function create_post_type() {
   );
 
      // Photo
-  register_post_type('photo',
+  register_post_type('photos',
     array(
       'labels' => array(
         'name' => __('Фото', 'machete'),
@@ -164,7 +164,7 @@ add_action( 'init', 'create_layout_tax', 0 );
   function create_layout_tax() {
     register_taxonomy(
       'albums',
-      array('photo'),
+      array('photos'),
       array(
         'label'             => __( 'Альбом', 'machete' ),
         'hierarchical'       => true,
