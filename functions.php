@@ -1,4 +1,6 @@
 <?php 
+
+require_once 'my_widgets.php';
 /**************************************************** Register scripts and styles *********************************************************************/
 function wpdocs_theme_name_scripts() {
     wp_enqueue_script( 'jquery' );

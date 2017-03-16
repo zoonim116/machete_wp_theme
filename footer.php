@@ -6,11 +6,10 @@
             </nav>
             <div class="footer-links tac">
                 <ul class="soc">
-                    <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li>
+                        <?php  dynamic_sidebar('Social widget'); ?>
+                    </li>
                 </ul>
-
             </div>
             <div class="copy text-center">
                 All rights reserved © <?php echo date('Y') ?>.  Machete Records<br />

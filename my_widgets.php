@@ -1,12 +1,12 @@
 <?php
-function language_widget_init() {
+function social_widget_init() {
         register_sidebar( array(
-                'name'          => 'Language widget',
-                'id'            => 'language_widget',
+                'name'          => 'Social widget',
+                'id'            => 'social_widget',
                 'before_widget' => '',
                 'after_widget'  => '',
                 'before_title'  => '',
                 'after_title'   => ''
         ) );
 }
-add_action( 'widgets_init', 'language_widget_init' );
+add_action( 'widgets_init', 'social_widget_init' );
