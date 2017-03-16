@@ -34,7 +34,7 @@
 		<div class="container">
 			<div class="row top-links">
 				<div class="col-xs-3 col-sm-2 col-md-6  hidden-xs">
-					<a href="#"> <?php echo __('HAVAKUK', 'machete'); ?> <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+					<a href="<?php echo get_option('option_2') ?>" rel="nofollow"> <?php echo __('HAVAKUK', 'machete'); ?> <i class="fa fa-caret-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="col-xs-9 col-sm-10 col-md-6  hidden-xs">
 					<ul class="soc">

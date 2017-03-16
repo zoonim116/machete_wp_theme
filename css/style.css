@@ -922,6 +922,24 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active:focus, nav ul li.active
     text-transform: uppercase;
 }
 
+#bwg_container1_0 #bwg_container2_0 .bwg_standart_thumbnails_0 {
+    max-width: 100% !important;
+    width: 100%;
+}
+
+div[id^="bwg_container"] a {
+    margin-right: 10px !important;
+    margin-left: 10px;
+}
+
+div[id^="bwg_container"] div[id^="bwg_container"] .bwg_img_clear {
+    margin-top: 0px !important;
+}
+
+#bwg_container1_0 #bwg_container2_0 .bwg_standart_thumb_0 {
+    padding-bottom: 20px;
+}
+
 footer {
     text-align: center;
     padding-bottom: 30px;
