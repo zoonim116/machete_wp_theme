@@ -74,5 +74,11 @@ msgstr ""
 msgid "New"
 msgstr ""
 
+msgid "События"
+msgstr ""
+
+msgid "Добавить событие"
+msgstr ""
+
 msgid "Нет данных"
 msgstr ""

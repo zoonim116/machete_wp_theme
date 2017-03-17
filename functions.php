@@ -1,6 +1,9 @@
 <?php 
 
 require_once 'my_widgets.php';
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 /**************************************************** Register scripts and styles *********************************************************************/
 function wpdocs_theme_name_scripts() {
     wp_enqueue_script( 'jquery' );
@@ -124,6 +127,24 @@ function create_post_type() {
       'has_archive' => true,
       'rewrite' => true,
       'menu_icon' => 'dashicons-format-image'
+    )
+  );
+
+     // Events
+  register_post_type('event',
+    array(
+      'labels' => array(
+        'name' => __('События', 'machete'),
+        'singular_name' =>  __('События', 'machete'),
+        'all_items' => __('Все события', 'machete'),
+        'add_new' => __('Добавить событие ', 'machete'),
+        'add_new_item' => __('Добавить событие', 'machete')
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'thumbnail'),
+      'has_archive' => true,
+      'rewrite' => true,
+      'menu_icon' => 'dashicons-calendar-alt'
     )
   );
 

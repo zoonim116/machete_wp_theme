@@ -469,6 +469,9 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active:focus, nav ul li.active
     -ms-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
+    width: 245px;
+    height: 245px;
+    object-fit: cover;
 }
 
 .round-items .image:hover img {
@@ -565,6 +568,10 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active:focus, nav ul li.active
 
 }
 
+a {
+    outline: none;
+}
+
 .videos .image {
     position: relative;
     overflow: hidden;
@@ -574,7 +581,7 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active:focus, nav ul li.active
 
 .videos .image img {
     width: 100%;
-    height: auto;
+    _height: 260px;
 }
 
 .videos .image .caption {
@@ -652,7 +659,7 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active:focus, nav ul li.active
 
 }
 
-.events a , .events a span{
+.events a , .events span{
     display: block;
 }
 
@@ -666,7 +673,7 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active:focus, nav ul li.active
     margin-bottom: 25px;
 }
 
-.events a {
+.events .event_item {
     padding-left: 20px;
     margin-bottom: 40px;
     position: relative;

@@ -42,7 +42,7 @@
 							<?php  dynamic_sidebar('Social widget'); ?>
 						</li>
                         <li>
-                            <a href="#">
+                            <!-- <a href="#"> -->
                                 <svg id="dj" x="0px" y="0px" width="34px" height="10.746px" viewBox="0 0 34 10.746">
                                     <linearGradient id="grad" x1="0" y1="0" x2="0" y2="100%">
                                         <stop stop-color="#977d40" offset="0"></stop>
@@ -63,7 +63,7 @@
                                             c0.438,0.471,0.657,1.528,0.657,3.173v4.081H34l-0.524,1.589H25.621z"/>
                                     </g>
                                 </svg>
-                            </a>
+                            <!-- </a> -->
                         </li>
 					</ul>
 				</div>
