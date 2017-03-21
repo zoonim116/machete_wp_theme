@@ -194,6 +194,16 @@ add_action( 'init', 'create_layout_tax', 0 );
         'query_var'         => true,
       )
     );
+
+    register_taxonomy(
+      'v_albums',
+      array('video'),
+      array(
+        'label'             => __( 'Видео альбом', 'machete' ),
+        'hierarchical'       => true,
+        'query_var'         => true,
+      )
+    );
 }
 
 

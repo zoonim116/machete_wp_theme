@@ -8,9 +8,10 @@ body {
     font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     color: #fff;
     background-color: #000;
-    background-image:  url(../images/body-bg.jpg), url(../images/footer-bg.jpg);
-    background-position: 50% 0, 50% 100%;
-    background-repeat: no-repeat, no-repeat;
+    background-image:  url(../images/body-bg.jpg);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+
 }
 
 @-webkit-keyframes Opacity {
@@ -948,9 +949,9 @@ div[id^="bwg_container"] div[id^="bwg_container"] .bwg_img_clear {
 }
 
 footer {
-    text-align: center;
-    padding-bottom: 30px;
-
+     background-image:  url(../images/footer-bg.jpg);
+    background-position: 50% 100%;
+    background-repeat: no-repeat; 
 }
 
 footer .container{

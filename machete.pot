@@ -62,6 +62,9 @@ msgstr ""
 msgid "Альбом"
 msgstr ""
 
+msgid "Видео альбом"
+msgstr ""
+
 msgid "Меню"
 msgstr ""
 
